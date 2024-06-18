@@ -1,0 +1,50 @@
+[ec2-user@ip-172-31-35-171 ~]$ sudo -s
+[root@ip-172-31-35-171 ec2-user]# adduser duoc
+[root@ip-172-31-35-171 ec2-user]# cd /home/
+
+[root@ip-172-31-35-171 home]# ls -l
+total 0
+drwx------. 2 duoc     duoc     62 Jun 18 16:01 duoc
+drwx------. 3 ec2-user ec2-user 95 Jun 18 15:54 ec2-user
+[root@ip-172-31-35-171 home]# adduser cloud
+[root@ip-172-31-35-171 home]# ls -l
+total 0
+drwx------. 2 cloud    cloud    62 Jun 18 16:03 cloud
+drwx------. 2 duoc     duoc     62 Jun 18 16:01 duoc
+drwx------. 3 ec2-user ec2-user 95 Jun 18 15:54 ec2-user
+[root@ip-172-31-35-171 home]# adduser lian
+[root@ip-172-31-35-171 home]# ls -l
+total 0
+drwx------. 2 cloud    cloud    62 Jun 18 16:03 cloud
+drwx------. 2 duoc     duoc     62 Jun 18 16:01 duoc
+drwx------. 3 ec2-user ec2-user 95 Jun 18 15:54 ec2-user
+drwx------. 2 lian     lian     62 Jun 18 16:05 lian
+[root@ip-172-31-35-171 home]# usermod  lian -g duoc
+[root@ip-172-31-35-171 home]# ls -l
+total 0
+drwx------. 2 cloud    cloud    62 Jun 18 16:03 cloud
+drwx------. 2 duoc     duoc     62 Jun 18 16:01 duoc
+drwx------. 3 ec2-user ec2-user 95 Jun 18 15:54 ec2-user
+drwx------. 2 lian     duoc     62 Jun 18 16:05 lian
+  
+[root@ip-172-31-35-171 home]# chmod -R 752 cloud/
+[root@ip-172-31-35-171 home]# chmod -R 643 duoc/
+[root@ip-172-31-35-171 home]# chmod -R 531 lian/
+[root@ip-172-31-35-171 home]# ls -l
+total 0
+drwxr-x-w-. 2 cloud    cloud    62 Jun 18 16:03 cloud
+drw-r---wx. 2 duoc     duoc     62 Jun 18 16:01 duoc
+drwx------. 3 ec2-user ec2-user 95 Jun 18 15:54 ec2-user
+dr-x-wx--x. 2 lian     duoc     62 Jun 18 16:05 lian
+
+  
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABkNnS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABkNnS] [-g group] [-h host] [-p prompt] [-U user]
+            [-u user] [command [arg ...]]
+usage: sudo [-ABbEHkNnPS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] [VAR=value] [-i | -s] [command [arg ...]]
+usage: sudo -e [-ABkNnS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] file ...
