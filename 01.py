@@ -1,0 +1,1 @@
+print("Mi primer algoritmo")

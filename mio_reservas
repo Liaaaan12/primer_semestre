@@ -1,0 +1,58 @@
+from os import system
+salas=[1,2,3,4,5]
+select=""
+reserva=[None]*5
+livert_select=""
+
+def reserva_sala(rut:str):
+    while True:
+        select=input("Ingrese la sala a elegir o X para salir: ")
+        if select.lower=="X":
+            return
+        if select in "12345" and len(select)==1 and salas[(int(select))-1] != "x":
+                salas[(int(select))-1]="X"
+                reserva[(int(select))-1]=rut
+                return
+        else:
+            print("El dato ingresado no es valido")
+
+def mostrar():
+    print(salas)
+
+
+def liverar(liver_select):
+    liver_select=int(liver_select)
+    salas[liver_select-1]=str(liver_select)
+    reserva[liver_select-1]=None
+    print("La sala fue liverada!!!!!")
+
+
+
+while True:
+    print("""
+
+        1. Reservar salas
+        2. Ver listado de salas
+        3. Liverar
+        9. Salir
+    """)
+
+    op=input("Ingrese la opcion a elegir: ")
+    match op:
+        case "1":
+            rut=input("Ingrese el rut: ")
+            mostrar()
+            reserva_sala(rut)
+        case"2":
+            mostrar()
+        case"3":
+            mostrar()
+            liver_select=input("Ingrese una sala a liverar: ")
+            if liver_select in "12345" and len(liver_select)==1:
+                liverar(liver_select)
+            else:
+                print("Sala ingresada no valida")
+        case "9":
+            break
+        case other:
+            print("El dato ingresado no es valido")
