@@ -1,0 +1,49 @@
+
+
+La Internet de las cosas (IoT) describe la red de objetos físicos ("cosas") que llevan incorporados sensores, software y otras tecnologías con el fin de conectarse e intercambiar datos con otros dispositivos y sistemas a través de Internet. Estos dispositivos van desde objetos domésticos comunes hasta herramientas industriales sofisticadas. Con más de 7 mil millones de dispositivos IoT conectados en la actualidad
+
+
+
+¿Por qué es tan importante el Internet de las cosas (IoT)?
+
+En los últimos años, IoT se ha convertido en una de las tecnologías más importantes del siglo XXI. Ahora que podemos conectar objetos cotidianos, electrodomésticos, coches, termostatos, monitores de bebés, a Internet a través de dispositivos integrados, es posible una comunicación fluida entre personas, procesos y cosas.
+
+Mediante la informática de bajo costo, la nube, big data, analítica y tecnologías móviles, las cosas físicas pueden compartir y recopilar datos con una mínima intervención humana. En este mundo hiperconectado, los sistemas digitales pueden grabar, supervisar y ajustar cada interacción entre las cosas conectadas. El mundo físico y el digital van de la mano y cooperan entre sí.
+
+
+
+¿Qué tecnologías han hecho posible el IoT?
+
+Si bien la idea de IoT existe desde hace mucho tiempo, una colección de avances recientes en una serie de tecnologías diferentes la ha hecho práctica.
+
+    Accede a la tecnología de sensores de bajo costo y potencia. Los sensores asequibles y fiables están haciendo posible la tecnología IoT para más fabricantes.
+    Conectividad. Una gran cantidad de protocolos de red para Internet ha facilitado la conexión de sensores a la nube y a otras cosas para lograr una transferencia de datos eficiente
+    Plataformas de informática en la nube. El aumento en la disponibilidad de plataformas en la nube permite a las empresas y a los consumidores acceder a la infraestructura que necesitan para escalar sin tener que administrarlo todo.
+    Aprendizaje automático y analítica. Con los avances en aprendizaje automático y analítica, junto con el acceso a cantidades grandes y variadas de datos almacenados en la nube, las empresas pueden recopilar información de forma más rápida y fácil. Por un lado, el surgimiento de estas tecnologías aliadas sigue traspasando los límites de IoT; por otro, los datos producidos por IoT también alimentan estas tecnologías.
+    Inteligencia artificial (IA) conversacional. Los avances en las redes neuronales han llevado el procesamiento del lenguaje natural (PLN) a los dispositivos IoT (como los asistentes personales digitales Alexa, Cortana y Siri) y los han hecho atractivos, asequibles y viables para uso doméstico.
+//////////////////////////////////////////////////////////////////////////77
+
+que es iot 
+iot da el significado de internet de las cosas, que se refiere dispositivos conectados en gran cantidad que facilita la comunicacion de los dispositivos y la nube, que integra objetos (cosas)
+que usaban a diario con el internet. a lo largo de los años los informaticos iban agregando los objetos como sensores, placas, conexiones y procesadores como algo cotidiano. sin embargo en los primeros años era muy dificil tener un avance tecnologico 
+rapido y efectivo ya que esos años no habia expertos en el tema y al crear maquinarias u objetos 
+era muy costoso crear y vender para que el mundo tenga y conozca la tecnologia de ultima que estan creando
+//////////////////////////////////////////////////////////////////////////////////
+porque es importante 
+
+La importancia que tiene IoT en la actualidad es mas grande imaginamos ya que iot esta en todas partes sin darnos cuenta 
+el avanze tecnologico que tuvo fue abismal a lo largo de los años y en cada sitio esta IoT presente como colegios,liceos, universidades, hospitales, supermecados, negocios, casa y en nuestra persona (telefono, tablet, pc, etc)
+aca mostramos algunas caracteristicas importantes de IoT
+
+
+    Conectividad: La capacidad de conectar dispositivos físicos a través de internet es fundamental para el IoT. Estos dispositivos pueden comunicarse entre sí y con sistemas centrales para intercambiar datos y recibir instrucciones.
+    Sensores y actuadores: Los dispositivos IoT están equipados con sensores que recopilan datos del entorno físico, como temperatura, humedad, presión, ubicación, etc. Además, pueden estar equipados con actuadores que les permiten realizar acciones basadas en los datos recopilados.
+    Interoperabilidad: Para que el IoT sea efectivo, los dispositivos deben poder comunicarse y trabajar juntos de manera fluida, incluso si son de diferentes fabricantes o utilizan diferentes protocolos de comunicación.
+    Escalabilidad: El IoT debe ser escalable para permitir la conexión de una amplia gama de dispositivos, desde sensores individuales hasta redes complejas de dispositivos interconectados.
+    Seguridad: Dado que el IoT implica la transmisión y el intercambio de datos sensibles, la seguridad es una característica crítica. Los dispositivos IoT deben estar protegidos contra intrusiones y vulnerabilidades de seguridad para proteger la integridad y la privacidad de los datos.
+    Gestión remota: Muchos dispositivos IoT permiten la gestión remota, lo que significa que pueden ser monitoreados, configurados y actualizados de forma remota a través de internet.
+    Análisis de datos en tiempo real: El IoT genera grandes cantidades de datos, y la capacidad de analizar estos datos en tiempo real es fundamental para obtener información significativa y tomar decisiones rápidas y efectivas.
+    Automatización y control inteligente: Una de las principales fortalezas del IoT es su capacidad para automatizar tareas y procesos, así como para permitir un control inteligente y adaptativo basado en los datos recopilados.
+
+
+

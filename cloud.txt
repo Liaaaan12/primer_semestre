@@ -1,0 +1,24 @@
+aws
+   \region 
+          \ejemplo(linux)
+                        \web(httpd)
+
+/var/www/html->mipagina
+                      \index.html
+
+user "ec2-user"
+
+sudo -s: activa el super usuario
+yum install httpd -y: instala el paquete de recursos
+systemctl status httpd: comprubea si esta instalado y muestra el estado que se encuentra (activo o inactivo)
+:q : para salir
+systemctl start httpd: inicia el programa
+
+cd/var/www/html
+mkdir mipagina
+vi index: editor de texto
+q!: salir sin guardar
+wq: para salir y guardar 
+ 
+rm index.httpd: borrar archivo y aceptar
+

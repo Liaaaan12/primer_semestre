@@ -1,0 +1,36 @@
+vitual private cloud (vpc) es administrado por el usuario
+
+la subred define dentro el rango de dirreciones IP dentro d la VPC
+
+ip elastica siginfica una ip publica para estar en cualquier instancia 
+
+internet gateway ofrece conexio d vpc a internet
+
+el nat gateway permite las instancias de la subred privada a internet
+
+se logra la interconexion entre vpc utulizando vpc peering
+
+el aws direct connet es la conexion dedicada }
+
+los grupos de seguridad de aws representan un firewall virtual a nivel de la instancia 
+
+[network acl: listas de control de acceso
+
+se genera reglas mas particulares para la subred]
+
+grupos de seguridad ACL de red: los grupos de seguridad son estado, ACL de red no lo son
+
+gestion de DNS amazon route 53
+
+se puede conectar VPC a la red corporativa a travez a AWS site to site Vpn
+
+el amazon route 53 redigir usuarios a aplicaciones de internet traducciendo nombres en direcciones ip numericas 
+
+Aws site to site se diferencia con el aws connect porque una internet para conectar redes mientras connect usa coneexion de red dedicada 
+
+que caracteriza el amacenamiento de objetos en aws: almacenamiento de datos como objetos dentro de buckets
+
+amazon s3 ofrece almacenamiento practicamente limitado con dursbilidad y disponibilidad altas 
+
+la ventaja de amazon efs: propociona sistema de archivos escalable 
+
