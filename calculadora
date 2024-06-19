@@ -1,15 +1,15 @@
-def sumar(a, b):
-    return a + b
+def sumar(a, b, c):
+    return a + b + c
 
-def restar(a, b):
-    return a - b
+def restar(a, b, c):
+    return a - b - c
 
-def multiplicar(a, b):
-    return a * b
+def multiplicar(a, b, c):
+    return a * b * c
 
-def dividir(a, b):
-    if b != 0:
-        return a / b
+def dividir(a, b, c):
+    if b != 0 and c != 0:
+        return a / b / c
     else:
         return "Error: División por cero"
 
@@ -26,19 +26,20 @@ def calculadora():
         if opcion in ['1', '2', '3', '4']:
             num1 = float(input("Ingrese el primer número: "))
             num2 = float(input("Ingrese el segundo número: "))
+            num3 = float(input("Ingrese el tercer número: "))
             
             if opcion == '1':
-                print(f"{num1} + {num2} = {sumar(num1, num2)}")
+                print(f"{num1} + {num2} + {num3} = {sumar(num1, num2, num3)}")
             elif opcion == '2':
-                print(f"{num1} - {num2} = {restar(num1, num2)}")
+                print(f"{num1} - {num2} - {num3} = {restar(num1, num2, num3)}")
             elif opcion == '3':
-                print(f"{num1} * {num2} = {multiplicar(num1, num2)}")
+                print(f"{num1} * {num2} * {num3} = {multiplicar(num1, num2, num3)}")
             elif opcion == '4':
-                resultado = dividir(num1, num2)
+                resultado = dividir(num1, num2, num3)
                 if resultado == "Error: División por cero":
                     print(resultado)
                 else:
-                    print(f"{num1} / {num2} = {resultado}")
+                    print(f"{num1} / {num2} / {num3} = {resultado}")
             
             siguiente_operacion = input("¿Quieres realizar otra operación? (s/n): ")
             if siguiente_operacion.lower() != 's':
@@ -48,3 +49,4 @@ def calculadora():
 
 if __name__ == "__main__":
     calculadora()
+
