@@ -1,0 +1,90 @@
+import os
+
+cargos_disponibles = ["CEO", "Desarrollador", "Analista de datos"]
+trabajadores = []
+
+def registrar_trabajador():
+    print("\n--- Registro de Trabajador ---")
+    nombre = input("Nombre: ")
+    apellido = input("Apellido: ")
+    cargo = input("Cargo ({}): ".format(", ".join(cargos_disponibles)))
+    while cargo not in cargos_disponibles:
+        print("Cargo no válido. Intente de nuevo.")
+        cargo = input("Cargo ({}): ".format(", ".join(cargos_disponibles)))
+    sueldo_bruto = float(input("Sueldo Bruto: "))
+    
+    desc_salud = sueldo_bruto * 0.07
+    desc_afp = sueldo_bruto * 0.12
+    sueldo_liquido = sueldo_bruto - desc_salud - desc_afp
+    
+    trabajador = {
+        "nombre_completo": f"{nombre} {apellido}",
+        "cargo": cargo,
+        "sueldo_bruto": sueldo_bruto,
+        "desc_salud": desc_salud,
+        "desc_afp": desc_afp,
+        "sueldo_liquido": sueldo_liquido
+    }
+    
+    trabajadores.append(trabajador)
+    print("Trabajador registrado exitosamente.")
+
+def listar_trabajadores():
+    print("\n--- Listado de Trabajadores ---")
+    for trabajador in trabajadores:
+        print(f"{trabajador['nombre_completo']} {trabajador['cargo']} "
+              f"{trabajador['sueldo_bruto']} {trabajador['desc_salud']} {trabajador['desc_afp']} "
+              f"{trabajador['sueldo_liquido']}")
+    if not trabajadores:
+        print("No hay trabajadores registrados.")
+
+def imprimir_planilla():
+    print("\n--- Impresión de Planilla de Sueldos ---")
+    print("Cargos disponibles:", ", ".join(cargos_disponibles))
+    cargo_seleccionado = input("Seleccione un cargo para imprimir la planilla o escriba 'todos': ")
+    
+    if cargo_seleccionado.lower() == 'todos':
+        filename = "planilla_todos.txt"
+        with open(filename, 'w') as file:
+            file.write("Trabajador\tCargo\tSueldo Bruto\tDesc Salud\tDesc AFP\tSueldo Líquido\n")
+            for trabajador in trabajadores:
+                file.write(f"{trabajador['nombre_completo']}\t{trabajador['cargo']}\t"
+                           f"{trabajador['sueldo_bruto']}\t{trabajador['desc_salud']}\t"
+                           f"{trabajador['desc_afp']}\t{trabajador['sueldo_liquido']}\n")
+        print(f"Planilla completa de sueldos generada en {filename}.")
+    elif cargo_seleccionado in cargos_disponibles:
+        filename = f"planilla_{cargo_seleccionado.lower()}.txt"
+        with open(filename, 'w') as file:
+            file.write("Trabajador\tCargo\tSueldo Bruto\tDesc Salud\tDesc AFP\tSueldo Líquido\n")
+            for trabajador in trabajadores:
+                if trabajador['cargo'] == cargo_seleccionado:
+                    file.write(f"{trabajador['nombre_completo']}\t{trabajador['cargo']}\t"
+                               f"{trabajador['sueldo_bruto']}\t{trabajador['desc_salud']}\t"
+                               f"{trabajador['desc_afp']}\t{trabajador['sueldo_liquido']}\n")
+        print(f"Planilla de sueldos para el cargo '{cargo_seleccionado}' generada en {filename}.")
+    else:
+        print("Cargo no válido.")
+
+def main():
+    while True:
+        print("\n--- Menú Principal ---")
+        print("1. Registrar trabajador")
+        print("2. Listar todos los trabajadores")
+        print("3. Imprimir planilla de sueldos")
+        print("4. Salir del programa")
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == '1':
+            registrar_trabajador()
+        elif opcion == '2':
+            listar_trabajadores()
+        elif opcion == '3':
+            imprimir_planilla()
+        elif opcion == '4':
+            print("Saliendo del programa...")
+            break
+        else:
+            print("Opción no válida. Intente de nuevo.")
+
+if __name__ == "__main__":
+    main()
