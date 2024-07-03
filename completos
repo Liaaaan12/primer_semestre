@@ -1,27 +1,16 @@
 import random
 import os
 from os import system
-system ("cls")
 
+system("cls")
 
-# Clase para representar un pedido
-class Pedido:
-    def __init__(self, nombre, apellido, direccion, sector, cantidad_aleman, cantidad_a_lo_pobre, cantidad_atomico):
-        self.id = random.randint(1, 200)
-        self.nombre = nombre
-        self.apellido = apellido
-        self.direccion = direccion
-        self.sector = sector
-        self.cantidad_aleman = cantidad_aleman
-        self.cantidad_a_lo_pobre = cantidad_a_lo_pobre
-        self.cantidad_atomico = cantidad_atomico
 
 # Lista para almacenar los pedidos
 pedidos = []
 
 def registrar_pedido():
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+
     nombre = input("Ingrese su nombre: ")
     apellido = input("Ingrese su apellido: ")
     direccion = input("Ingrese su dirección: ")
@@ -30,38 +19,47 @@ def registrar_pedido():
     cantidad_a_lo_pobre = int(input("Cantidad de completos a lo pobre: "))
     cantidad_atomico = int(input("Cantidad de completos atómico: "))
 
-    nuevo_pedido = Pedido(nombre, apellido, direccion, sector, cantidad_aleman, cantidad_a_lo_pobre, cantidad_atomico)
+    nuevo_pedido = {
+        'id': random.randint(1, 200),
+        'nombre': nombre,
+        'apellido': apellido,
+        'direccion': direccion,
+        'sector': sector,
+        'cantidad_aleman': cantidad_aleman,
+        'cantidad_a_lo_pobre': cantidad_a_lo_pobre,
+        'cantidad_atomico': cantidad_atomico
+    }
     pedidos.append(nuevo_pedido)
-    
-    print(f"Pedido registrado con ID: {nuevo_pedido.id}")
+
+    print(f"Pedido registrado con ID: {nuevo_pedido['id']}")
 
 def imprimir_pedidos():
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+
     with open("listado_pedidos.txt", "w") as file:
         for pedido in pedidos:
-            file.write(f"ID: {pedido.id}\n")
-            file.write(f"Nombre: {pedido.nombre}\n")
-            file.write(f"Apellido: {pedido.apellido}\n")
-            file.write(f"Dirección: {pedido.direccion}\n")
-            file.write(f"Sector: {pedido.sector}\n")
-            file.write(f"Cantidad de completos alemán: {pedido.cantidad_aleman}\n")
-            file.write(f"Cantidad de completos a lo pobre: {pedido.cantidad_a_lo_pobre}\n")
-            file.write(f"Cantidad de completos atómico: {pedido.cantidad_atomico}\n")
+            file.write(f"ID: {pedido['id']}\n")
+            file.write(f"Nombre: {pedido['nombre']}\n")
+            file.write(f"Apellido: {pedido['apellido']}\n")
+            file.write(f"Dirección: {pedido['direccion']}\n")
+            file.write(f"Sector: {pedido['sector']}\n")
+            file.write(f"Cantidad de completos alemán: {pedido['cantidad_aleman']}\n")
+            file.write(f"Cantidad de completos a lo pobre: {pedido['cantidad_a_lo_pobre']}\n")
+            file.write(f"Cantidad de completos atómico: {pedido['cantidad_atomico']}\n")
             file.write("\n")
-    
+
     print("Listado de pedidos impreso en listado_pedidos.txt")
 
 def menu():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        
+
         print("1. Registrar un nuevo pedido")
         print("2. Imprimir listado de pedidos")
         print("3. Salir")
-        
+
         opcion = input("Seleccione una opción: ")
-        
+
         if opcion == "1":
             registrar_pedido()
         elif opcion == "2":
