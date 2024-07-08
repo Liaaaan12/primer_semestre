@@ -1,0 +1,100 @@
+import re
+
+# Función para validar RUT
+def validar_rut(rut):
+    return len(rut) == 9 and rut[:-1].isdigit() and rut[-1].isalpha()
+
+# Función para validar nombre y apellido
+def validar_nombre_apellido(texto):
+    return bool(texto.strip())
+
+# Función para validar edad
+def validar_edad(edad):
+    return edad.isdigit() and int(edad) >= 18
+
+# Función para validar estado civil
+def validar_estado_civil(estado):
+    return estado in ['C', 'S', 'V']
+
+# Función para validar correo electrónico
+def validar_correo(correo):
+    return bool(re.match(r"[^@]+@[^@]+\.[^@]+", correo))
+
+# Función para guardar afiliado
+def guardar_afiliado(afiliados):
+    rut = input("Ingrese RUT (ejemplo 17092503K): ")
+    while not validar_rut(rut):
+        rut = input("RUT inválido. Ingrese nuevamente: ")
+
+    nombre = input("Ingrese nombre: ")
+    while not validar_nombre_apellido(nombre):
+        nombre = input("Nombre inválido. Ingrese nuevamente: ")
+
+    apellido_paterno = input("Ingrese apellido paterno: ")
+    while not validar_nombre_apellido(apellido_paterno):
+        apellido_paterno = input("Apellido paterno inválido. Ingrese nuevamente: ")
+
+    edad = input("Ingrese edad: ")
+    while not validar_edad(edad):
+        edad = input("Edad inválida. Debe ser mayor de 18 años. Ingrese nuevamente: ")
+
+    estado_civil = input("Ingrese estado civil (C = Casado, S = Soltero, V = Viudo): ")
+    while not validar_estado_civil(estado_civil):
+        estado_civil = input("Estado civil inválido. Ingrese nuevamente (C, S, V): ")
+
+    fecha_afiliacion = input("Ingrese fecha de afiliación: ")
+    while not fecha_afiliacion.strip():
+        fecha_afiliacion = input("Fecha de afiliación no puede estar vacía. Ingrese nuevamente: ")
+
+    correo = input("Ingrese correo electrónico: ")
+    while not validar_correo(correo):
+        correo = input("Correo inválido. Ingrese nuevamente: ")
+
+    afiliados.append({
+        "rut": rut,
+        "nombre": nombre,
+        "apellido_paterno": apellido_paterno,
+        "edad": int(edad),
+        "estado_civil": estado_civil,
+        "fecha_afiliacion": fecha_afiliacion,
+        "correo": correo
+    })
+    print("Afiliado guardado exitosamente.")
+
+# Función para buscar afiliados por estado civil
+def buscar_por_estado_civil(afiliados):
+    estado_civil = input("Ingrese estado civil para buscar (C = Casado, S = Soltero, V = Viudo): ")
+    while not validar_estado_civil(estado_civil):
+        estado_civil = input("Estado civil inválido. Ingrese nuevamente (C, S, V): ")
+
+    encontrados = [afiliado for afiliado in afiliados if afiliado["estado_civil"] == estado_civil]
+    if encontrados:
+        for afiliado in encontrados:
+            print(f"RUT: {afiliado['rut']}, Nombre: {afiliado['nombre']} {afiliado['apellido_paterno']}, "
+                  f"Edad: {afiliado['edad']}, Estado Civil: {afiliado['estado_civil']}, "
+                  f"Fecha de Afiliación: {afiliado['fecha_afiliacion']}, Correo: {afiliado['correo']}")
+    else:
+        print("No se encontraron afiliados con el estado civil indicado.")
+
+# Función principal del programa
+def main():
+    afiliados = []
+    while True:
+        print("\nMenú:")
+        print("1. Guardar")
+        print("2. Buscar")
+        print("3. Salir")
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            guardar_afiliado(afiliados)
+        elif opcion == "2":
+            buscar_por_estado_civil(afiliados)
+        elif opcion == "3":
+            print("Saliendo del programa...")
+            break
+        else:
+            print("Opción inválida. Intente nuevamente.")
+
+if __name__ == "__main__":
+    main()
