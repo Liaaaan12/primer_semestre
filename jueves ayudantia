@@ -1,0 +1,36 @@
+import random
+import csv
+
+superheroes = []
+
+
+def agregar_heroes(id_heroe, nombre_heroe, año_aparicion):
+    
+    id_heroe = random.randint(1, 10)
+
+    if año_aparicion >= 1900 and año_aparicion.isdigit:
+        print("El heroe debe de aver nacido antes de 1900")
+        return False
+    elif nombre_heroe <= 3:
+        print("El nombre debe de ser mas de 3 caracteres")
+        return False
+
+    superheroe = {
+
+        "Id_heroe": id_heroe,
+        "nombre_heroe": nombre_heroe,
+        "año_aparicion": año_aparicion,
+    }
+    superheroes.append(superheroe)
+
+def agregar_popularidad():
+    if not superheroes:
+        print("no hay personajes")
+    ubicacion = input(f"ingrese ubicacion(positivo y menor )")
+    if ubicacion.isdigit() and ubicacion >0 and ubicacion <=len(superheroes):
+        popu = random.randint(1, 10)
+        superheroes[ubicacion]["popularidad"] = popu
+def mayor_popularidad():
+    max_popu =
+    
+
