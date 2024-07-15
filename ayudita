@@ -1,0 +1,81 @@
+import random
+import csv
+from os import system
+system("cls")
+
+superheroes = []
+
+def limpiar_pantalla():
+    system("cls")
+
+def agregar_superheroe():
+    system("cls")
+    while True:
+        nombre = input("Ingrese el nombre del superheroe: ").strip()
+        if len(nombre) > 3 and nombre.isalpha():
+            break
+        else:
+            print("Nombre inválido")
+    
+    while True:
+        anio_aparicion = input("Ingrese el año de aparición: ").strip()
+        if len(anio_aparicion) == 4 and anio_aparicion.isdigit() and int(anio_aparicion) > 1900:
+            break
+        else:
+            print("Año inválido")
+    
+    id_popularidad = random.randint(1, 10)
+    
+    superheroe = {
+        "nombre": nombre,
+        "anio_aparicion": anio_aparicion,
+        "id_popularidad": id_popularidad
+    }
+
+    superheroes.append(superheroe)
+    print("Superheroe agregado")
+
+def mostrar_superheroes():
+    system("cls")
+    if len(superheroes) == 0:
+        print("No hay superheroes")
+    else:
+        print("Superheroes")
+        print("-----------")
+        for i in superheroes:
+            print(f"Nombre: {i['nombre']}")
+            print(f"Año de aparición: {i['anio_aparicion']}")
+            print(f"Popularidad: {i['id_popularidad']}")
+            print("")
+
+def imprimir_csv():
+    system("cls")
+    with open("superheroes.csv", "w", newline="") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["nombre", "anio_aparicion", "id_popularidad"])
+        writer.writeheader()
+        for i in superheroes:
+            writer.writerow(i)
+    print("Archivo csv creado")
+
+def menu():
+    system("cls")
+    while True:
+        print("Menú")
+        print("1. Agregar superheroe")
+        print("2. Mostrar superheroe")
+        print("3. Imprimir csv")
+        print("4. Salir")
+        opcion = input("Ingrese una opción: ").strip()
+        if opcion == "1":
+            agregar_superheroe()
+        elif opcion == "2":
+            mostrar_superheroes()
+        elif opcion == "3":
+            imprimir_csv()
+        elif opcion == "4":
+            break
+        else:
+            print("Opción inválida")
+
+if __name__ == "__main__":
+    menu()
